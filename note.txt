@@ -1,0 +1,6 @@
+You must add .env file to configure port and datababse
+DATABASE = 
+RUNNING_PORT = 
+
+MONGODB_USER_NAME = 
+MONGODB_USER_PASSWORD = 
