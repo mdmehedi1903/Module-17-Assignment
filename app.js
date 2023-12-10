@@ -49,7 +49,7 @@ mongoose
     useUnifiedTopology: true,
     autoIndex: true,
   })
-  .then(() => console.log("DB Connected at Localhost: ToDo"))
+  .then(() => console.log("DB Connected at Localhost: Assignment-17"))
   .catch((err) => {
     console.error(err);
   });

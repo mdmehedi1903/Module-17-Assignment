@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
+const {ObjectId} = mongoose.Schema.Types;
 
 const DataSchema = mongoose.Schema({
-    items: [], 
-    totalAmount: {type: Number, required:true}, 
+    items: [
+        {
+            product: { type: ObjectId, ref: 'Product', required: true },
+            quantity: { type: Number, required: true, min: 1 }
+        }
+    ],
+    totalAmount: {type: Number, required:true, min:0}, 
     shippingAddress: {type: String, required: true},
     status: {type: String, required: true, default: "Pending"}
 },
@@ -13,6 +19,3 @@ const DataSchema = mongoose.Schema({
 
 const Order = mongoose.model('orders', DataSchema);
 module.exports = Order;
-
-// items: Array of objects, each containing product (ObjectId, reference to a Product) and quantity (Number).
-// totalAmount: Number, required, positive value.
